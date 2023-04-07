@@ -18,3 +18,4 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
 minikube start --kubernetes-version=v1.21.0 --driver=none
 mkdir -p /opt/jenkins_home
 chown -R ubuntu:ubuntu /opt/jenkins_home
+minikube addons enable ingress
