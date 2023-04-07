@@ -16,3 +16,5 @@ sudo apt-get install -y kubectl
 #Install Minikube:
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
 minikube start --kubernetes-version=v1.21.0 --driver=none
+mkdir -p /opt/jenkins_home
+chown -R ubuntu:ubuntu /opt/jenkins_home
