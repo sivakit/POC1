@@ -1,0 +1,30 @@
+clone : 	git clone https://github.com/goharbor/harbor-helm.git
+Install:	helm install harbor . -n harbor
+update /etc/hosts in laptop with ec2-public ip: 
+		18.224.171.214 core.harbor.domain
+		18.224.171.214 notary.harbor.domain
+update /etc/hosts in server with ec2-private ip:
+		172.31.25.83 core.harbor.domain
+		172.31.25.83 notary.harbor.domain
+
+Access url : https://core.harbor.domain ( username = admin & password = Harbor12345)
+Create Project in harbor
+
+Log in Docker: docker login -u<harbor-user> core.harbor.domain, we will get certificate error. So we need to download cert and update ca.cert
+
+
+docker login -u admin core.harbor.domain
+sudo cp /tmp/ca.crt /etc/ssl/certs/
+sudo update-ca-certificates
+Update docker deamon file 
+/etc/docker/daemon.json and restart docker "systemctl restart  docker"
+
+{
+	"insecure-registries" : [ "core.harbor.domain" ]
+}
+
+docker login -u admin core.harbor.domain
+password: Harbor12345
+
+Reference Link: https://medium.com/@Devopscontinens/alongside-harbor-berth-with-minikube-b31e487974f4
+
