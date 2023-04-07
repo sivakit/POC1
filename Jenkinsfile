@@ -26,7 +26,7 @@ pipeline {
   }
   post {
     always {
-      sh 'docker system prune -af'
+      sh 'echo "completed"'
     }
   }
 }

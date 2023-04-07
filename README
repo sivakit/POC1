@@ -1,1 +1,4 @@
-
+Install Jenkins
+Install Harbor
+Install Jenkins-docker_slave
+	build docker image
