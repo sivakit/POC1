@@ -1,5 +1,5 @@
 clone : 	git clone https://github.com/goharbor/harbor-helm.git
-Install:	helm install harbor . -n harbor
+Install:	helm install harbor . -n harbor --create-namespace
 update /etc/hosts in laptop with ec2-public ip: 
 		18.224.171.214 core.harbor.domain
 		18.224.171.214 notary.harbor.domain
